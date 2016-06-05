@@ -12,3 +12,4 @@
 | - | scala | - | - | - | 第1志願(isBooking = 1), 第2志願(全部data) | 0.00912 |
 | - | - | dt | - | numClasses = 100, depth = 5, maxBin = 32 | single result | 0.08449 |
 | - | - | - | - | numClasses = 100, depth = 7, maxBin = 32 | - | 0.09899 (Highest) |
+| - | - | - | - | numClasses = 100, depth = 9, maxBin = 32 | - | 0.09899 (Highest) |
