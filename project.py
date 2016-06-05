@@ -62,46 +62,48 @@ def pickBooking(parts):
     return int(parts[18]) == 1
 
 def parseTrain(parts):
-    label = float(parts[TRAIN_HOTEL_CLUSTER])
+    p = parts
+    label = float(p[TRAIN_HOTEL_CLUSTER])
     features = [
-        parts[TRAIN_SITE_NAME],
-        parts[TRAIN_POSA_CONTINENT],
-        parts[TRAIN_USER_LOCATION_COUNTRY],
-        parts[TRAIN_USER_LOCATION_REGION],
-        parts[TRAIN_USER_LOCATION_CITY],
-        parts[TRAIN_IS_MOBILE],
-        parts[TRAIN_IS_PACKAGE],
-        parts[TRAIN_CHANNEL],
-        parts[TRAIN_SRCH_ADULTS_CNT],
-        parts[TRAIN_SRCH_CHILDREN_CNT],
-        parts[TRAIN_SRCH_RM_CNT],
-        parts[TRAIN_SRCH_DESTINATION_ID],
-        parts[TRAIN_SRCH_DESTINATION_TYPE_ID],
-        parts[TRAIN_HOTEL_CONTINENT],
-        parts[TRAIN_HOTEL_COUNTRY],
-        parts[TRAIN_HOTEL_MARKET],
+        p[TRAIN_SITE_NAME],
+        p[TRAIN_POSA_CONTINENT],
+        p[TRAIN_USER_LOCATION_COUNTRY],
+        p[TRAIN_USER_LOCATION_REGION],
+        p[TRAIN_USER_LOCATION_CITY],
+        p[TRAIN_IS_MOBILE],
+        p[TRAIN_IS_PACKAGE],
+        p[TRAIN_CHANNEL],
+        p[TRAIN_SRCH_ADULTS_CNT],
+        p[TRAIN_SRCH_CHILDREN_CNT],
+        p[TRAIN_SRCH_RM_CNT],
+        p[TRAIN_SRCH_DESTINATION_ID],
+        p[TRAIN_SRCH_DESTINATION_TYPE_ID],
+        p[TRAIN_HOTEL_CONTINENT],
+        p[TRAIN_HOTEL_COUNTRY],
+        p[TRAIN_HOTEL_MARKET],
 	]
     return LabeledPoint(label, features)
 
 def parseTest(parts):
-    label = parts[TEST_ID]
+    p = parts
+    label = p[TEST_ID]
     features = [
-        parts[TEST_SITE_NAME],
-        parts[TEST_POSA_CONTINENT],
-        parts[TEST_USER_LOCATION_COUNTRY],
-        parts[TEST_USER_LOCATION_REGION],
-        parts[TEST_USER_LOCATION_CITY],
-        parts[TEST_IS_MOBILE],
-        parts[TEST_IS_PACKAGE],
-        parts[TEST_CHANNEL],
-        parts[TEST_SRCH_ADULTS_CNT],
-        parts[TEST_SRCH_CHILDREN_CNT],
-        parts[TEST_SRCH_RM_CNT],
-        parts[TEST_SRCH_DESTINATION_ID],
-        parts[TEST_SRCH_DESTINATION_TYPE_ID],
-        parts[TEST_HOTEL_CONTINENT],
-        parts[TEST_HOTEL_COUNTRY],
-        parts[TEST_HOTEL_MARKET],
+        p[TEST_SITE_NAME],
+        p[TEST_POSA_CONTINENT],
+        p[TEST_USER_LOCATION_COUNTRY],
+        p[TEST_USER_LOCATION_REGION],
+        p[TEST_USER_LOCATION_CITY],
+        p[TEST_IS_MOBILE],
+        p[TEST_IS_PACKAGE],
+        p[TEST_CHANNEL],
+        p[TEST_SRCH_ADULTS_CNT],
+        p[TEST_SRCH_CHILDREN_CNT],
+        p[TEST_SRCH_RM_CNT],
+        p[TEST_SRCH_DESTINATION_ID],
+        p[TEST_SRCH_DESTINATION_TYPE_ID],
+        p[TEST_HOTEL_CONTINENT],
+        p[TEST_HOTEL_COUNTRY],
+        p[TEST_HOTEL_MARKET],
     ]
     return LabeledPoint(label, features)
 
