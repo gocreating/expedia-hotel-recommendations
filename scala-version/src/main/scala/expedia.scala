@@ -7,12 +7,11 @@ import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
 
-object expedia {
+object Expedia {
   def main(args: Array[String]): Unit = {
     val	conf	=	new	SparkConf().setAppName("Kaggle").setMaster("local[4]")
     val	sc	=	new	SparkContext(conf)
     val	sqlContext	=	new	SQLContext(sc)
-    import sqlContext.implicits._
 
     // print train's fields
     val	data	=	sc.textFile("/home/gocreating/Desktop/train.csv")
