@@ -81,7 +81,7 @@ object Expedia {
     val	numClasses	=	100
     val	categoricalFeaturesInfo	=	Map[Int,	Int]()
     val	impurity	=	"gini"
-    val	maxDepth	=	10
+    val	maxDepth	=	15
     //	maximum	number	of	bins	used	for	spliHng	features
     val	maxBins	=	32
     val	model	=	DecisionTree.trainClassifier(train,	numClasses,
