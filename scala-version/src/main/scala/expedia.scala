@@ -1,4 +1,5 @@
-package com.kaggle.expedia;
+package kaggle.expedia
+
 import org.apache.spark.mllib.tree.DecisionTree
 import org.apache.spark.mllib.tree.model.DecisionTreeModel
 import org.apache.spark.{SparkContext,	SparkConf}
@@ -9,12 +10,13 @@ import org.apache.spark.mllib.classification.{NaiveBayes, NaiveBayesModel}
 
 object Expedia {
   def main(args: Array[String]): Unit = {
-    val	conf	=	new	SparkConf().setAppName("Kaggle").setMaster("local[4]")
+    // val	conf	=	new	SparkConf().setAppName("Kaggle").setMaster("local[4]")
+    val	conf	=	new	SparkConf().setAppName("Kaggle")
     val	sc	=	new	SparkContext(conf)
     val	sqlContext	=	new	SQLContext(sc)
 
     // print train's fields
-    val	data	=	sc.textFile("/home/gocreating/Desktop/train.csv")
+    val	data	=	sc.textFile("train.csv")
     val	head	=	data.first()
     var	i	=	-1
     val	field	=	head.split(",").map{	x	=>
@@ -23,7 +25,7 @@ object Expedia {
     }.foreach(println)
 
     // print test's fields
-    val	data2	=	sc.textFile("/home/gocreating/Desktop/test.csv")
+    val	data2	=	sc.textFile("test.csv")
     val	head2	=	data2.first()
     var	i2	=	-1
     val	field2	=	head2.split(",").map{	x	=>
